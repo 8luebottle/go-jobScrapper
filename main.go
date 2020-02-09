@@ -64,7 +64,7 @@ func getPage(page int) []extractedJob {
 	var jobs []extractedJob
 
 	// Create a Channel
-	c := make(chan extractJob())
+	c := make(chan extractedJob)
 
 	pageURL := baseURL + "&start=" + strconv.Itoa(page*50)
 	fmt.Println("Requesting", pageURL)
