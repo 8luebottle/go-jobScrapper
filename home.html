@@ -1,17 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Go Job Scrapper</title>
-</head>
-<body>
-    <h1>Go Job Scrapper</h1>
-    <h3>Indeed.com scrapper</h3>
-    <form method="POST" action="/scrape">
-        <input placeholder="What kind of job are you looking for" name="term"/>
-        <button>Search</button>
-    </form>
-</body>
+    <html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Go Job Scrapper</title>
+        <link rel="stylesheet" href="assets/home.css" />
+    </head>
+    <body>
+        <script type="text/javascript" src="assets/home.js"></script>
+        <h1>Go Job Scrapper</h1>
+        <h3>Indeed.com scrapper</h3>
+        <form method="POST" action="/scrape">
+            <form id="content">
+                <input 
+                    placeholder="Type any programming language" 
+                    type="text" 
+                    name="term" 
+                    class="input" 
+                id="search-input">
+                <button type="reset" class="search" id="search-btn">Search</button>
+              </form>
+        </form>
+        <div>
+
+            <span>Made by <a href="https://github.com/8luebottle/">8luebottle</a></span>
+        </div>
+    </body>
 </html>
