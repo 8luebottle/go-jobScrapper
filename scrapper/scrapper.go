@@ -22,7 +22,7 @@ type extractedJob struct {
 
 // Scrape Indeed by a term
 func Scrape(term string) {
-	var baseURL string = "https://kr.indeed.com/jobs?q="+ term +"&limit=50"
+	var baseURL string = "https://kr.indeed.com/jobs?q=" + term + "&limit=50"
 	var jobs []extractedJob
 	c := make(chan []extractedJob) // This channel going to send Slice of extractedJob
 	totalPages := getPages(baseURL)
@@ -74,10 +74,10 @@ func getPage(page int, url string, mainC chan<- []extractedJob) {
 // Instead of return extractedJob, send extractedJob to the channel (c)
 func extractJob(card *goquery.Selection, c chan<- extractedJob) {
 	id, _ := card.Attr("data-jk")
-	title := cleanString(card.Find(".title>a").Text())
-	location := cleanString(card.Find(".sjcl").Text())
-	salary := cleanString(card.Find(".salaryText").Text())
-	summary := cleanString(card.Find(".summary").Text())
+	title := CleanString(card.Find(".title>a").Text())
+	location := CleanString(card.Find(".sjcl").Text())
+	salary := CleanString(card.Find(".salaryText").Text())
+	summary := CleanString(card.Find(".summary").Text())
 	c <- extractedJob{ // Receiving messages
 		id:       id,
 		title:    title,
@@ -88,7 +88,7 @@ func extractJob(card *goquery.Selection, c chan<- extractedJob) {
 }
 
 // Clean Spaces : Print in One Line (w/ whitespace speration)
-func cleanString(str string) string {
+func CleanString(str string) string {
 	return strings.Join(strings.Fields(strings.TrimSpace(str)), " ")
 }
 
