@@ -28,3 +28,4 @@ Port Number : 1400
 ```bash
 http://localhost:1400/
 ```
+<img width="700" alt="Job Scrapper" src="https://user-images.githubusercontent.com/48475824/74223337-cb52f280-4cf9-11ea-9464-2867b006451f.png">
