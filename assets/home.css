@@ -21,9 +21,14 @@ input {
 input:focus {
   outline: none;
 }
-
 input.placeholder{
   text-align: center;
+}
+
+.inner-box{
+  justify-content: center;
+  position: relative;
+  left: 30px
 }
 
 a {
@@ -43,6 +48,11 @@ button{
   font-family: 'Black Ops One';
   font-size: 14px;
 }
+
+button:focus{
+  outline: none;
+}
+
 div{
   margin : 20px;
   font-size: 13px;
